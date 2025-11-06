@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="assets/css/style.css">
+<title>Portfolio</title>
+</head>
+  <body>
+    <header id="site-header"></header>
+    <main class="container">
+      <h1>Blog</h1>
+      <div class="card">
+        <p>Voici quelques billets. Ajoutez des fichiers HTML dans <code>/blog</code> et reliez-les ici.</p>
+      </div>
+      <div class="grid cols-2">
+        <div class="card">
+          <h3><a href="post-bonjour.html">Bonjour, monde !</a></h3>
+          <p class="muted">Un premier billet minimal.</p>
+        </div>
+      </div>
+    </main>
+    
+<footer>
+  <div class="inner">
+    <div>© <span id="y"></span> <span id="owner">Votre Nom</span></div>
+    <div>Fait avec <a href="https://pages.github.com/">GitHub Pages</a></div>
+  </div>
+</footer>
+<script src="assets/js/site.js"></script>
+<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+
+  </body>
+</html>

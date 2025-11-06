@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="assets/css/style.css">
+<title>Portfolio</title>
+
+  </head>
+  <body>
+    <header id="site-header"></header>
+    <main class="container">
+      <h1>Contact</h1>
+      
+<div class="card">
+  <p>Pour me contacter, écrivez-moi à <a href="mailto:vous@example.com">vous@example.com</a> (mettez à jour dans <code>assets/js/site.js</code>).</p>
+</div>
+<div class="card">
+  <h2>Formulaire (mailto)</h2>
+  <form onsubmit="event.preventDefault(); window.location = `mailto:${SITE.email}?subject=${encodeURIComponent(this.subject.value)}&body=${encodeURIComponent(this.message.value)}`;">
+    <div style="display:grid;gap:10px;max-width:700px">
+      <input name="subject" required placeholder="Sujet" style="padding:12px;border-radius:10px;border:1px solid var(--border);background:#0b1120;color:var(--fg)">
+      <textarea name="message" required placeholder="Message" rows="6" style="padding:12px;border-radius:10px;border:1px solid var(--border);background:#0b1120;color:var(--fg)"></textarea>
+      <button style="padding:12px 16px;border-radius:10px;border:1px solid var(--border);background:var(--accent);color:#0b1022;cursor:pointer">Envoyer</button>
+    </div>
+  </form>
+  <p class="muted">Astuce : pour un vrai formulaire côté serveur, utilisez un service comme Formspree/Netlify Forms.</p>
+</div>
+
+    </main>
+    
+<footer>
+  <div class="inner">
+    <div>© <span id="y"></span> <span id="owner">Votre Nom</span></div>
+    <div>Fait avec <a href="https://pages.github.com/">GitHub Pages</a></div>
+  </div>
+</footer>
+<script src="assets/js/site.js"></script>
+<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+
+  </body>
+</html>
