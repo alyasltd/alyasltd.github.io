@@ -1,43 +1,56 @@
 <!doctype html>
 <html lang="fr">
   <head>
-    
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="assets/css/style.css">
-<title>Portfolio</title>
-
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ALYAS LTD — About</title>
+    <link rel="stylesheet" href="assets/css/style.css">
   </head>
   <body>
-    <header id="site-header"></header>
-    <main class="container">
-      <h1>À propos</h1>
-      
-<div class="card">
-  <p>Bienvenue sur mon site ! Je suis <strong>Votre Nom</strong>. Ce site rassemble mon CV, mes projets de code, mes intérêts de recherche et mes publications.</p>
-  <p>Modifiez ce texte dans <code>index.html</code>. Remplacez l'image <code>assets/img/photo.jpg</code> par la vôtre (carrée de préférence).</p>
-</div>
-<div class="grid cols-2">
-  <div class="card">
-    <h2>Actu</h2>
-    <p class="muted">Ajoutez ici vos news, conférences, prix, billets récents…</p>
-  </div>
-  <div class="card">
-    <h2>Compétences</h2>
-    <p><span class="badge">Python</span><span class="badge">JS</span><span class="badge">Data</span></p>
-  </div>
-</div>
+    <div class="wrapper">
+      <div class="layout">
+        <!-- Colonne gauche -->
+        <aside class="sidebar">
+          <img class="photo" src="assets/img/photo.jpg" alt="Photo de ALYAS LTD">
+          <h2>À propos</h2>
+          <p>Bonjour ! Je suis <strong>ALYAS LTD</strong>. Ce site rassemble mon CV, mon code, mes intérêts de recherche et mes publications.</p>
+          <p>Basé à … • Intérêt: Data, IA, Web.</p>
+        </aside>
 
-    </main>
-    
-<footer>
-  <div class="inner">
-    <div>© <span id="y"></span> <span id="owner">Votre Nom</span></div>
-    <div>Fait avec <a href="https://pages.github.com/">GitHub Pages</a></div>
-  </div>
-</footer>
-<script src="assets/js/site.js"></script>
-<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+        <!-- Colonne droite -->
+        <section class="right">
+          <div class="site-name">ALYAS LTD</div>
 
+          <nav aria-label="Navigation principale">
+            <a class="nav-link active" href="index.html" aria-current="page">About</a>
+            <a class="nav-link" href="cv.html">CV</a>
+            <a class="nav-link" href="code.html">Code</a>
+            <a class="nav-link" href="research.html">Research interests</a>
+            <a class="nav-link" href="publications.html">Publications</a>
+            <a class="nav-link" href="blog/index.html">Blog</a>
+            <a class="nav-link" href="contact.html">Contact</a>
+          </nav>
+
+          <main class="content">
+            <h1>Bienvenue</h1>
+            <div class="card">
+              <p>Voici ma page d’accueil. Mises à jour récentes, missions, conférences, et autres annonces peuvent apparaître ici.</p>
+            </div>
+
+            <div class="card">
+              <h2>Compétences</h2>
+              <p><span class="badge">Python</span><span class="badge">JavaScript</span><span class="badge">Data</span><span class="badge">ML</span></p>
+            </div>
+          </main>
+
+          <footer>
+            <div class="inner">
+              <div>© <script>document.write(new Date().getFullYear())</script> ALYAS LTD</div>
+              <div>Propulsé par GitHub Pages</div>
+            </div>
+          </footer>
+        </section>
+      </div>
+    </div>
   </body>
 </html>

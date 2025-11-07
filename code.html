@@ -1,33 +1,221 @@
 <!doctype html>
 <html lang="fr">
   <head>
-    
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="assets/css/style.css">
-<title>Portfolio</title>
-
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ALYAS LTD — Code</title>
+    <link rel="stylesheet" href="assets/css/style.css">
   </head>
   <body>
-    <header id="site-header"></header>
-    <main class="container">
-      <h1>Code</h1>
-      
-<div class="card">
-  <p>Cette page liste automatiquement vos dépôts publics GitHub. Dans <code>assets/js/site.js</code>, remplacez <code>githubUser</code> par votre identifiant.</p>
-</div>
-<div id="repos" class="grid cols-2"></div>
+    <div class="wrapper">
+      <div class="layout">
+        <!-- Colonne gauche : marge large, photo + texte -->
+        <aside class="sidebar">
+          <img class="photo" src="assets/img/photo.jpg" alt="Photo de ALYAS LTD">
+          <h2>Mes projets</h2>
+          <p>Repos publics, projets en cours et archives. La liste ci-dessous se met à jour automatiquement depuis GitHub.</p>
+          <p class="muted">Astuce : renomme/étoile tes repos importants pour qu’ils restent en haut.</p>
+        </aside>
 
-    </main>
-    
-<footer>
-  <div class="inner">
-    <div>© <span id="y"></span> <span id="owner">Votre Nom</span></div>
-    <div>Fait avec <a href="https://pages.github.com/">GitHub Pages</a></div>
-  </div>
-</footer>
-<script src="assets/js/site.js"></script>
-<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+        <!-- Colonne droite : nom, nav, contenu -->
+        <section class="right">
+          <div class="site-name">ALYAS LTD</div>
 
+          <nav aria-label="Navigation principale">
+            <a class="nav-link" href="index.html">About</a>
+            <a class="nav-link" href="cv.html">CV</a>
+            <a class="nav-link active" href="code.html" aria-current="page">Code</a>
+            <a class="nav-link" href="research.html">Research interests</a>
+            <a class="nav-link" href="publications.html">Publications</a>
+            <a class="nav-link" href="blog/index.html">Blog</a>
+            <a class="nav-link" href="contact.html">Contact</a>
+          </nav>
+
+          <main class="content">
+            <h1>Repos GitHub</h1>
+
+            <p>Voici la liste de mes dépôts publics sur GitHub :</p>
+        
+
+            <!-- Conteneur où on va injecter les cards -->
+            <div id="repos" class="grid cols-2">
+              <!-- Fallback qui s'affiche pendant le chargement -->
+              <div class="card">
+                <h3><a href="https://github.com/alyasltd?tab=repositories" target="_blank" rel="noopener">Voir tous mes dépôts sur GitHub</a></h3>
+                <p class="muted">Chargement…</p>
+              </div>
+            </div>
+
+            <noscript>
+              <div class="card">
+                <p>JavaScript est désactivé — consulte directement
+                  <a href="https://github.com/alyasltd?tab=repositories" target="_blank" rel="noopener">mes dépôts sur GitHub</a>.
+                </p>
+              </div>
+            </noscript>
+          </main>
+
+          <footer>
+            <div class="inner">
+              <div>© <script>document.write(new Date().getFullYear())</script> ALYAS LTD</div>
+              <div>Propulsé par GitHub Pages</div>
+            </div>
+          </footer>
+        </section>
+      </div>
+    </div>
+
+    <!-- Script ultra-compatible sans async/await -->
+    <script>
+    (function () {
+      // ← mets ici ton identifiant ou le nom d’org
+      var GITHUB_USER = "alyasltd";
+
+      // utilitaire pour sélectionner un élément
+      function $(sel) { return document.querySelector(sel); }
+
+      // transforme un repo GitHub en "card" HTML
+      function renderRepoCard(repo) {
+        var langBadge = repo.language
+          ? '<span class="badge">' + repo.language + '</span>'
+          : '';
+
+        var starsBadge =
+          '<span class="badge">★ ' + (repo.stargazers_count || 0) + '</span>';
+
+        var dateBadge =
+          '<span class="badge">MAJ: ' +
+          new Date(repo.updated_at).toLocaleDateString() +
+          '</span>';
+
+        var desc = repo.description
+          ? repo.description
+          : "Sans description";
+
+        return (
+          '<div class="card">' +
+            '<h3 style="margin:0 0 6px">' +
+              '<a href="' + repo.html_url + '" target="_blank" rel="noopener">' +
+                repo.name +
+              '</a>' +
+            '</h3>' +
+            '<p class="muted">' + desc + '</p>' +
+            '<div>' +
+              langBadge + ' ' + starsBadge + ' ' + dateBadge +
+            '</div>' +
+          '</div>'
+        );
+      }
+
+      // injecter toute la liste dans le DOM
+      function renderRepoList(repos) {
+        var container = $("#repos");
+        if (!container) return;
+
+        if (!repos || !repos.length) {
+          container.innerHTML =
+            '<div class="card">' +
+              '<p class="muted">' +
+                'Aucun dépôt public trouvé. ' +
+                '<a href="https://github.com/' + GITHUB_USER + '?tab=repositories" target="_blank" rel="noopener">' +
+                'Voir sur GitHub' +
+                '</a>.' +
+              '</p>' +
+            '</div>';
+          return;
+        }
+
+        var html = "";
+        for (var i = 0; i < repos.length; i++) {
+          html += renderRepoCard(repos[i]);
+        }
+        container.innerHTML = html;
+      }
+
+      // si tout échoue (ex: rate limit GitHub), on affiche un fallback propre
+      function renderFallback() {
+        var container = $("#repos");
+        if (!container) return;
+        container.innerHTML =
+          '<div class="card">' +
+            '<h3><a href="https://github.com/' + GITHUB_USER + '?tab=repositories" target="_blank" rel="noopener">' +
+              'Voir tous mes dépôts sur GitHub' +
+            '</a></h3>' +
+            '<p class="muted">Impossible d’afficher la liste dynamique (hors-ligne ou limite API).</p>' +
+          '</div>';
+      }
+
+      // appel API GitHub (classique XMLHttpRequest pour compat max)
+      function fetchRepos(url, onSuccess, onError) {
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", url, true);
+        xhr.setRequestHeader("Accept", "application/vnd.github+json");
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState === 4) {
+            if (xhr.status >= 200 && xhr.status < 300) {
+              try {
+                var data = JSON.parse(xhr.responseText);
+                onSuccess(data);
+              } catch (e) {
+                onError(e);
+              }
+            } else {
+              onError(new Error("HTTP " + xhr.status));
+            }
+          }
+        };
+        xhr.send();
+      }
+
+      // logique : on essaie d'abord /users/:user, puis /orgs/:user
+      function loadRepos() {
+        var userURL = "https://api.github.com/users/" +
+                      encodeURIComponent(GITHUB_USER) +
+                      "/repos?sort=updated&per_page=100";
+
+        fetchRepos(userURL, function (data) {
+          if (Object.prototype.toString.call(data) === "[object Array]" && data.length) {
+            // trier par updated_at desc
+            data.sort(function (a, b) {
+              return new Date(b.updated_at) - new Date(a.updated_at);
+            });
+            renderRepoList(data);
+          } else {
+            // peut-être que c'est pas un "user" mais une "org"
+            loadOrgRepos();
+          }
+        }, function () {
+          // si ça plante totalement, tenter org directe
+          loadOrgRepos();
+        });
+      }
+
+      function loadOrgRepos() {
+        var orgURL = "https://api.github.com/orgs/" +
+                     encodeURIComponent(GITHUB_USER) +
+                     "/repos?sort=updated&per_page=100";
+
+        fetchRepos(orgURL, function (data) {
+          if (Object.prototype.toString.call(data) === "[object Array]" && data.length) {
+            data.sort(function (a, b) {
+              return new Date(b.updated_at) - new Date(a.updated_at);
+            });
+            renderRepoList(data);
+          } else {
+            renderFallback();
+          }
+        }, function () {
+          renderFallback();
+        });
+      }
+
+      // lancer dès que la page est chargée
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", loadRepos);
+      } else {
+        loadRepos();
+      }
+    })();
+    </script>
   </body>
 </html>

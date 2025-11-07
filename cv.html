@@ -1,36 +1,51 @@
 <!doctype html>
 <html lang="fr">
   <head>
-    
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="assets/css/style.css">
-<title>Portfolio</title>
-
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ALYAS LTD — CV</title>
+    <link rel="stylesheet" href="assets/css/style.css">
   </head>
   <body>
-    <header id="site-header"></header>
-    <main class="container">
-      <h1>CV</h1>
-      
-<div class="card">
-  <p>Placez votre CV PDF dans <code>assets/cv.pdf</code>. Le lecteur s'affichera ci-dessous si présent.</p>
-  <p><a href="assets/cv.pdf">Télécharger le CV (PDF)</a></p>
-</div>
-<div class="card">
-  <iframe src="assets/cv.pdf" style="width:100%;height:75vh;border:1px solid var(--border);border-radius:12px"></iframe>
-</div>
+    <div class="wrapper">
+      <div class="layout">
+        <aside class="sidebar">
+          <img class="photo" src="assets/img/photo.jpg" alt="Photo de ALYAS LTD">
+          <h2>À propos</h2>
+          <p>Ceci est mon CV. Téléchargeable ci-dessous et consultable en ligne.</p>
+        </aside>
 
-    </main>
-    
-<footer>
-  <div class="inner">
-    <div>© <span id="y"></span> <span id="owner">Votre Nom</span></div>
-    <div>Fait avec <a href="https://pages.github.com/">GitHub Pages</a></div>
-  </div>
-</footer>
-<script src="assets/js/site.js"></script>
-<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+        <section class="right">
+          <div class="site-name">ALYAS LTD</div>
 
+          <nav aria-label="Navigation principale">
+            <a class="nav-link" href="index.html">About</a>
+            <a class="nav-link active" href="cv.html" aria-current="page">CV</a>
+            <a class="nav-link" href="code.html">Code</a>
+            <a class="nav-link" href="research.html">Research interests</a>
+            <a class="nav-link" href="publications.html">Publications</a>
+            <a class="nav-link" href="blog/index.html">Blog</a>
+            <a class="nav-link" href="contact.html">Contact</a>
+          </nav>
+
+          <main class="content">
+            <h1>CV</h1>
+            <div class="card">
+              <p><a href="assets/cv.pdf">Télécharger le CV (PDF)</a></p>
+            </div>
+            <div class="card">
+              <iframe src="assets/cv.pdf" style="width:100%;height:75vh;border:1px solid var(--border);border-radius:12px"></iframe>
+            </div>
+          </main>
+
+          <footer>
+            <div class="inner">
+              <div>© <script>document.write(new Date().getFullYear())</script> ALYAS LTD</div>
+              <div>Propulsé par GitHub Pages</div>
+            </div>
+          </footer>
+        </section>
+      </div>
+    </div>
   </body>
 </html>

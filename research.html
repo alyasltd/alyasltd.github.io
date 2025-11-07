@@ -1,37 +1,52 @@
 <!doctype html>
 <html lang="fr">
   <head>
-    
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="assets/css/style.css">
-<title>Portfolio</title>
-
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ALYAS LTD — Research interests</title>
+    <link rel="stylesheet" href="assets/css/style.css">
   </head>
   <body>
-    <header id="site-header"></header>
-    <main class="container">
-      <h1>Research interests</h1>
-      
-<div class="card">
-  <p>Décrivez ici vos thèmes de recherche, axes, projets en cours, collaborations…</p>
-  <ul>
-    <li>Sujet 1 — description courte.</li>
-    <li>Sujet 2 — description courte.</li>
-    <li>Sujet 3 — description courte.</li>
-  </ul>
-</div>
+    <div class="wrapper">
+      <div class="layout">
+        <aside class="sidebar">
+          <img class="photo" src="assets/img/photo.jpg" alt="Photo de ALYAS LTD">
+          <h2>Résumé</h2>
+          <p>Mes axes principaux et collaborations.</p>
+        </aside>
 
-    </main>
-    
-<footer>
-  <div class="inner">
-    <div>© <span id="y"></span> <span id="owner">Votre Nom</span></div>
-    <div>Fait avec <a href="https://pages.github.com/">GitHub Pages</a></div>
-  </div>
-</footer>
-<script src="assets/js/site.js"></script>
-<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+        <section class="right">
+          <div class="site-name">ALYAS LTD</div>
 
+          <nav aria-label="Navigation principale">
+            <a class="nav-link" href="index.html">About</a>
+            <a class="nav-link" href="cv.html">CV</a>
+            <a class="nav-link" href="code.html">Code</a>
+            <a class="nav-link active" href="research.html" aria-current="page">Research interests</a>
+            <a class="nav-link" href="publications.html">Publications</a>
+            <a class="nav-link" href="blog/index.html">Blog</a>
+            <a class="nav-link" href="contact.html">Contact</a>
+          </nav>
+
+          <main class="content">
+            <h1>Research interests</h1>
+            <div class="card">
+              <ul>
+                <li><strong>Sujet 1</strong> — description courte…</li>
+                <li><strong>Sujet 2</strong> — description courte…</li>
+                <li><strong>Sujet 3</strong> — description courte…</li>
+              </ul>
+            </div>
+          </main>
+
+          <footer>
+            <div class="inner">
+              <div>© <script>document.write(new Date().getFullYear())</script> ALYAS LTD</div>
+              <div>Propulsé par GitHub Pages</div>
+            </div>
+          </footer>
+        </section>
+      </div>
+    </div>
   </body>
 </html>
