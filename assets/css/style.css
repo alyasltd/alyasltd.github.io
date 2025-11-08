@@ -176,3 +176,90 @@ footer .inner {
   .sidebar{position:static}
   .site-name{font-size:1.6rem}
 }
+
+.news-section {
+  margin-top: 40px;
+}
+
+.news-section h2 {
+  font-size: 1.4rem;
+  color: var(--accent);
+  margin-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 6px;
+}
+
+.timeline {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background: var(--border);
+}
+
+.timeline li {
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 20px;
+}
+
+.timeline li::before {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 6px;
+  width: 10px;
+  height: 10px;
+  background: var(--accent);
+  border-radius: 50%;
+}
+
+.timeline .date {
+  display: inline-block;
+  font-weight: 600;
+  color: var(--accent);
+  font-size: 0.9rem;
+  margin-bottom: 2px;
+}
+
+.timeline p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #444;
+  line-height: 1.5;
+}
+
+.timeline a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.timeline a:hover {
+  text-decoration: underline;
+}
+
+.timeline .links {
+  margin-top: 4px;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.timeline .links a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.timeline .links a:hover {
+  text-decoration: underline;
+  opacity: 0.9;
+}
