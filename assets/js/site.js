@@ -1,13 +1,11 @@
-/* ========= Réglages du site ========= */
 const SITE = {
-  name: "ALYAS LTD",
-  photo: "assets/img/photo.jpg",       // ta photo/logo
-  email: "contact@votre-domaine",
-  githubUser: "alyasltd"               // <<< IMPORTANT
+  name: "Alya ZOUZOU",
+  photo: "assets/img/photo.jpg",     
+  email: "alyasltd@gmail.com",
+  githubUser: "alyasltd"            
 };
 
-/* ========= Header minimal (optionnel) ========= */
-/* Si tu as déjà un header ailleurs, tu peux garder le tien */
+
 function buildHeader() {
   const h = document.getElementById("site-header");
   if (!h) return;
@@ -28,7 +26,6 @@ function buildHeader() {
   `;
 }
 
-/* ========= Rendu d'une carte dépôt ========= */
 function repoCard(r) {
   const lang = r.language ? `<span class="badge">${r.language}</span>` : "";
   const stars = `<span class="badge">★ ${r.stargazers_count || 0}</span>`;
@@ -42,7 +39,6 @@ function repoCard(r) {
   `;
 }
 
-/* ========= Rendu de la liste ========= */
 function renderRepos(repos) {
   const container = document.getElementById("repos");
   if (!container) return;
@@ -56,7 +52,6 @@ function renderRepos(repos) {
   container.innerHTML = repos.map(repoCard).join("");
 }
 
-/* ========= Cache local ========= */
 const CACHE_KEY = (user) => `repos_cache_v1_${user}`;
 
 function getCachedRepos(user) {
@@ -76,7 +71,6 @@ function setCachedRepos(user, data) {
   } catch (_) {}
 }
 
-/* ========= Fetch GitHub (users puis orgs) ========= */
 async function fetchReposFrom(endpoint) {
   const res = await fetch(endpoint);
   if (!res.ok) throw new Error(`GitHub API: ${res.status}`);
@@ -87,26 +81,21 @@ async function loadReposAlways(username) {
   const container = document.getElementById("repos");
   if (!container) return;
 
-  // 1) Afficher le cache immédiatement s'il existe
   const cached = getCachedRepos(username);
   if (cached && cached.length) renderRepos(cached);
 
-  // 2) Essayer l'API GitHub (users)
   try {
     let repos = await fetchReposFrom(`https://api.github.com/users/${username}/repos?sort=updated&per_page=100`);
     if (!Array.isArray(repos) || repos.length === 0) {
-      // 3) Si vide (ou org), essayer /orgs
       repos = await fetchReposFrom(`https://api.github.com/orgs/${username}/repos?sort=updated&per_page=100`);
     }
 
-    // tri final par updated_at desc
     repos.sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
 
     renderRepos(repos);
     setCachedRepos(username, repos);
     return;
   } catch (e) {
-    // 4) En cas d'échec, si pas de cache on garde le fallback
     if (!cached) {
       container.innerHTML = `
         <div class="card">
@@ -119,7 +108,6 @@ async function loadReposAlways(username) {
   }
 }
 
-/* ========= Init ========= */
 document.addEventListener("DOMContentLoaded", () => {
   buildHeader();
   if (SITE.githubUser && SITE.githubUser !== "votre-github") {

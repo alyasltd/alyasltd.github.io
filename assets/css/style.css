@@ -1,38 +1,146 @@
-:root{
+:root {
   --bg: #ffffff;
-  --fg: #111827;
+  --fg: #2e2e2e;      /* texte principal légèrement grisé */
   --muted: #6b7280;
-  --accent: #2563eb;
+  --accent: #405675;  /* ton bleu-gris agréable */
   --border: #e5e7eb;
-  --link: #2563eb;
+  --link: #405675;    /* liens dans le texte */
   --maxw: 1200px;
 }
 
 *{box-sizing:border-box}
-html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font-family: Arial, Helvetica, sans-serif}
 a{color:var(--link);text-decoration:none}
-a:hover{text-decoration:underline}
+p{margin:0 0 12px 0;line-height:1.6;color:#444;font-size: 0.90rem;}
+/*a:hover{text-decoration:underline}*/
+p.location {
+  color: var(--muted);
+  font-style: italic;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.fun-facts {
+  list-style: none;             /* remove default bullets */
+  margin: 10px 0;
+  padding: 0;
+}
+
+.fun-facts li {
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  color: #445;                  /* gentle grey */
+  line-height: 1.5;
+  position: relative;
+  padding-left: 18px;           /* space for emoji */
+}
+
+.fun-facts li::before {
+  content: "•";                /* or use "•", "→", etc. */
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 0.8rem;
+  top: 2px;
+}
+
+.content p {
+  font-size: 0.9rem;           /* slightly smaller */
+  line-height: 1.6;
+  color: #444;                 /* softer dark grey */
+  margin: 0 0 12px 0;
+}
+
+.content a {
+  color: #506080;              /* lighter accent than nav */
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.content a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
 
 .wrapper{max-width:var(--maxw);margin:0 auto;padding:24px}
 .layout{display:grid;grid-template-columns: 340px 1fr;gap:32px}
 
 /* --- Colonne gauche (large) --- */
 .sidebar{position:sticky;top:24px;align-self:start}
-.photo{display:block;width:200px;height:200px;border-radius:50%;object-fit:cover;border:4px solid var(--border);box-shadow:0 4px 18px rgba(0,0,0,0.08)}
+.photo{display:block;width:300px;height:300px;border-radius:50%;object-fit:cover;border:4px solid var(--border);box-shadow:0 4px 18px rgba(0,0,0,0.08)}
 .sidebar h2{margin-top:16px;margin-bottom:8px;font-size:1.1rem;color:var(--muted)}
 .sidebar p{margin:0 0 12px 0;line-height:1.6;color:#1f2937}
 
 /* --- Colonne droite --- */
 .right{display:flex;flex-direction:column;gap:16px;min-width:0}
-.site-name{font-weight:800;font-size:2rem;letter-spacing:.2px}
-nav[aria-label="Navigation principale"]{display:flex;flex-wrap:wrap;gap:8px;border-bottom:1px solid var(--border);padding-bottom:10px}
-.nav-link{display:inline-block;padding:10px 14px;border:1px solid var(--border);border-radius:9999px;background:#f8fafc}
-.nav-link:hover{background:#eef2ff;text-decoration:none}
-.nav-link.active{background:var(--accent);color:#fff;border-color:var(--accent)}
-.content{display:block}
+.site-name{font-weight:550;font-size:2.5rem;letter-spacing:.1px;font-family: 'Courier New', monospace; color:#405675; display: flex; align-items: center; gap: 30px;}
+
+.site-name .socials a img {
+  width: 27px;
+  height: 27px;
+  opacity: 0.85;
+  transition: opacity 0.2s ease;
+  text-decoration: none;
+  border: none;
+  outline: none;
+}
+
+.site-name .socials a:hover img {
+  opacity: 1;
+}
+
+/* Navigation simple et élégante */
+nav[aria-label="Navigation principale"] {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  border-bottom: 1px solid var(--border);
+  padding: 12px 0;
+}
+
+.nav-link {
+  position: relative;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--fg);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+/* soulignement doux au hover */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: var(--accent);
+  transition: width 0.3s ease;
+}
+
+/* Effet hover */
+.nav-link:hover {
+  color: var(--accent);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Page active */
+.nav-link.active {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.content {
+  display: block;
+}
 
 /* Cartes et typographie */
-.card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:18px;box-shadow:0 2px 14px rgba(0,0,0,0.04);margin:12px 0}
+.card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:18px;box-shadow:0 2px 14px rgba(48, 48, 48, 0.04);margin:12px 0}
 h1{font-size:1.6rem;margin:8px 0 12px}
 h2{font-size:1.25rem;margin:16px 0 8px}
 p{line-height:1.7}
@@ -43,9 +151,25 @@ p{line-height:1.7}
 .table th,.table td{border-bottom:1px solid var(--border);padding:10px;text-align:left}
 
 /* Pied de page */
-footer{margin-top:36px;border-top:1px solid var(--border);background:#f8fafc}
-footer .inner{max-width:var(--maxw);margin:0 auto;padding:22px;color:var(--muted);font-size:.95rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+footer {
+  margin-top: 48px;
+  border-top: 1px solid var(--border);
+  background: var(--bg); /* même fond que la page */
+  width: 100%;
+}
 
+footer .inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 12px 24px;       /* petites marges intérieures */
+  font-size: 0.8rem;        /* police plus petite */
+  color: var(--muted);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
 /* Responsive */
 @media (max-width: 960px){
   .layout{grid-template-columns: 1fr;gap:20px}

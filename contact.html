@@ -1,47 +1,59 @@
 <!doctype html>
-<html lang="fr">
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>ALYAS LTD — Contact</title>
+    <title>Contact</title>
+    <link rel="icon" type="image/png" href="assets/img/icon.png">
     <link rel="stylesheet" href="assets/css/style.css">
   </head>
   <body>
     <div class="wrapper">
       <div class="layout">
         <aside class="sidebar">
-          <img class="photo" src="assets/img/photo.jpg" alt="Photo de ALYAS LTD">
-          <h2>Contact</h2>
-          <p>Écris-moi si tu as une question ou un projet.</p>
+          <img class="photo" src="assets/img/photo.jpg" alt="Photo de Alya ZOUZOU">
+          <h2>Contact Me !</h2>
+          <p>Don't hesitate to reach out if you have any questions or projects in mind.</p>
         </aside>
 
         <section class="right">
-          <div class="site-name">ALYAS LTD</div>
+          <div class="site-name">
+          Alya ZOUZOU
+          <span class="socials">
+            <a href="https://github.com/alyasltd" target="_blank" aria-label="GitHub">
+              <img src="assets/img/github.svg" alt="GitHub">
+            </a>
+            <a href="https://www.linkedin.com/in/alya-zouzou-827655255/" target="_blank" aria-label="LinkedIn">
+              <img src="assets/img/linkedin.svg" alt="LinkedIn">
+            </a>
+            <a href="https://scholar.google.com/citations?user=TON_ID" target="_blank" aria-label="Google Scholar">
+              <img src="assets/img/scholar.svg" alt="Google Scholar">
+            </a>
+          </span>
+        </div>
 
           <nav aria-label="Navigation principale">
             <a class="nav-link" href="index.html">About</a>
             <a class="nav-link" href="cv.html">CV</a>
             <a class="nav-link" href="code.html">Code</a>
             <a class="nav-link" href="research.html">Research interests</a>
-            <a class="nav-link" href="publications.html">Publications</a>
+            <a class="nav-link" href="publications.html">Publications and posters</a>
             <a class="nav-link" href="blog/index.html">Blog</a>
             <a class="nav-link active" href="contact.html" aria-current="page">Contact</a>
           </nav>
 
           <main class="content">
-            <h1>Me contacter</h1>
+
+            <p>Email : <a href="mailto:alyasltd@gmail.com">alyasltd@gmail.com</a></p>
+           
 
             <div class="card">
-              <p>Email : <a href="mailto:contact@votre-domaine">contact@votre-domaine</a></p>
-            </div>
-
-            <div class="card">
-              <h2>Formulaire (mailto)</h2>
-              <form onsubmit="event.preventDefault(); window.location = `mailto:contact@votre-domaine?subject=${encodeURIComponent(this.subject.value)}&body=${encodeURIComponent(this.message.value)}`;">
+              <h2>Contact Form</h2>
+              <form onsubmit="event.preventDefault(); window.location = `mailto:alyasltd@gmail.com?subject=${encodeURIComponent(this.subject.value)}&body=${encodeURIComponent(this.message.value)}`;">
                 <div style="display:grid;gap:10px;max-width:700px">
-                  <input name="subject" required placeholder="Sujet" style="padding:12px;border-radius:10px;border:1px solid var(--border)">
+                  <input name="subject" required placeholder="Subject" style="padding:12px;border-radius:10px;border:1px solid var(--border)">
                   <textarea name="message" required placeholder="Message" rows="6" style="padding:12px;border-radius:10px;border:1px solid var(--border)"></textarea>
-                  <button style="padding:12px 16px;border-radius:10px;border:1px solid var(--border);background:var(--accent);color:#fff;cursor:pointer">Envoyer</button>
+                  <button style="padding:12px 16px;border-radius:10px;border:1px solid var(--border);background:var(--accent);color:#fff;cursor:pointer">Send</button>
                 </div>
               </form>
             </div>
@@ -49,8 +61,8 @@
 
           <footer>
             <div class="inner">
-              <div>© <script>document.write(new Date().getFullYear())</script> ALYAS LTD</div>
-              <div>Propulsé par GitHub Pages</div>
+              <div>© <script>document.write(new Date().getFullYear())</script> Alya ZOUZOU </div>
+              <div>Made with GitHub Pages</div>
             </div>
           </footer>
         </section>
