@@ -4,13 +4,13 @@ document.addEventListener("DOMContentLoaded", () => {
   // Liste des articles à afficher
   const posts = [
     {
-      title: "",
-      date: "",
+      title: "How does Pose Estimation work ?",
+      date: "XXX",
       author: "Alya Zouzou",
-      image: "",
-      theme: "",
-      desc: "",
-      url: ""
+      image: "../assets/img/blog/art1/P3Pposeidon.png",
+      theme: "Computer Vision, perception",
+      desc: "Pose estimation is a fundamental task in computer vision that involves determining the position and orientation of an object in 3D space from 2D images. In this blog post, we will explore the key concepts and techniques used in pose estimation, including camera models, feature detection, and optimization algorithms.",
+      url: "../blog/pose_estimation.html"
     }
   ];
 

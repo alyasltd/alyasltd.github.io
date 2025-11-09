@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="fr">
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Publications</title>
+    <title>Publications & Posters</title>
     <link rel="icon" type="image/png" href="assets/img/icon.png">
     <link rel="stylesheet" href="assets/css/style.css">
   </head>
@@ -13,12 +13,12 @@
       <div class="layout">
         <!-- Sidebar -->
         <aside class="sidebar">
-          <img class="photo" src="assets/img/photo.jpg" alt="Photo de Alya ZOUZOU">
-          
+          <img class="photo" src="assets/img/photo.jpg" alt="Photo Alya Zouzou">
         </aside>
 
         <!-- Main content -->
         <section class="right">
+          <!-- Header -->
           <div class="site-name">
             Alya ZOUZOU
             <span class="socials">
@@ -39,49 +39,62 @@
             <a class="nav-link" href="index.html">About</a>
             <a class="nav-link" href="cv.html">CV</a>
             <a class="nav-link" href="code.html">Code</a>
-            <a class="nav-link" href="research.html">Research interests</a>
-            <a class="nav-link active" href="publications.html" aria-current="page">Publications and posters</a>
+            <a class="nav-link" href="research.html">Research</a>
+            <a class="nav-link active" href="publications.html" aria-current="page">Publications</a>
             <a class="nav-link" href="blog/index.html">Blog</a>
             <a class="nav-link" href="contact.html">Contact</a>
           </nav>
 
-          <!-- Publications -->
+          <!-- Main section -->
           <main class="content">
-            <h1>Publications & Posters</h1>
 
-            <div class="card">
-              <h2>2025</h2>
-              <p>
-                <strong>ZOUZOU, A.</strong>, et al. (2025). 
-                <em>Robust Vision-Based Runway Detection through Conformal Prediction and Conformal mAP.</em>  
-                In <strong>Proceedings of Machine Learning Research</strong>, pp. 266:1–20.  
-                <br>Presented at <strong>Conformal and Probabilistic Prediction with Applications (COPA 2025)</strong>, London, UK.  
-                <br>
-                [<a href="https://arxiv.org/abs/2505.16740" target="_blank">Paper (arXiv)</a>] 
-                [<a href="https://github.com/alyasltd/conformal_runway_detection" target="_blank">Code</a>] 
-                [<a href="https://example.com/copa2025-presentation.pdf" target="_blank">Presentation</a>]
-              </p>
+            <div class="pub-list">
+
+
+              
+              <div class="pub-card">
+                <img src="assets/img/publications/copa.png" alt="COPA 2025 Poster">
+                <div class="pub-content">
+                  <h2>Robust Vision-Based Runway Detection through Conformal Prediction and Conformal mAP</h2>
+                  <p><strong>ZOUZOU, A.</strong> et al. (2025). <br>
+                    In <em>Proceedings of Machine Learning Research</em>, 266:1–20. <br>
+                    Presented at <strong>Conformal and Probabilistic Prediction with Applications (COPA 2025)</strong>, London, UK.
+                  </p>
+                  <p class="links">
+                    [<a href="https://arxiv.org/abs/2505.16740" target="_blank">Paper</a>]
+                    [<a href="https://github.com/alyasltd/conformal_runway_detection" target="_blank">Code</a>]
+                    [<a href="assets/doc/slides/COPA2025.pdf" target="_blank">Presentation</a>]
+                  </p>
+                  <p class="meta">2025 · COPA (Conformal and Probabilistic Prediction with Applications) · Paper</p>
+                </div>
+              </div>
+
+
+
+              <div class="pub-card">
+                <img src="assets/img/publications/inm.png" alt="PFIA 2024 Poster">
+                <div class="pub-content">
+                  <h2>INM-Explain – Explaining Medical Controversies: Application to the Case of Non-Drug Interventions</h2>
+                  <p><strong>ZOUZOU, A.</strong> et al. (2024). <br>
+                    Presented at <strong>Health and AI Day @ PFIA 2024</strong>, La Rochelle, France (1 July 2024).
+                  </p>
+                  <p class="links">
+                    [<a href="https://pfia2024.univ-lr.fr/assets/files/Journ%C3%A9es-Sant%C3%A9-et-IA/ias2024_paper_9.pdf" target="_blank">Paper</a>]
+                    [<a href="http://advanse.lirmm.fr/controverse/html/contact.html" target="_blank">Project Page</a>]
+                    [<a href="https://github.com/alyasltd/INM-Explain" target="_blank">Code</a>]
+                    [<a href="assets/doc/slides/inm.pdf" target="_blank">Presentation</a>]
+                  </p>
+                  <p class="meta">2024 · PFIA (Plate-Forme Intelligence Artificielle) · Paper</p>
+                </div>
+              </div>
+
             </div>
-
-            <div class="card">
-              <h2>2024</h2>
-              <p>
-                <strong>ZOUZOU, A.</strong>, et al. (2024). 
-                <em>INM-Explain – Explaining Medical Controversies: Application to the Case of Non-Drug Interventions.</em>  
-                Presented at <strong>Health and AI Day @ PFIA 2024</strong>, La Rochelle, France (1 July 2024).  
-                <br>
-                [<a href="https://pfia2024.univ-lr.fr/assets/files/Journ%C3%A9es-Sant%C3%A9-et-IA/ias2024_paper_9.pdf" target="_blank">Paper (PFIA Proceedings)</a>] 
-                [<a href="http://advanse.lirmm.fr/controverse/html/contact.html" target="_blank">Project Page</a>] 
-                [<a href="https://github.com/alyasltd/INM-Explain" target="_blank">Code</a>] 
-                [<a href="https://example.com/pfia2024-presentation.pdf" target="_blank">Presentation</a>]
-              </p>
-            </div>
-
           </main>
 
+          <!-- Footer -->
           <footer>
             <div class="inner">
-              <div>© <script>document.write(new Date().getFullYear())</script> Alya ZOUZOU </div>
+              <div>© <script>document.write(new Date().getFullYear())</script> Alya ZOUZOU</div>
               <div>Made with GitHub Pages</div>
             </div>
           </footer>
