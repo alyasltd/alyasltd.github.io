@@ -4,22 +4,13 @@ document.addEventListener("DOMContentLoaded", () => {
   // Liste des articles à afficher
   const posts = [
     {
-      title: "Bonjour ! Welcome to my blog",
-      date: "November 2025",
+      title: "",
+      date: "",
       author: "Alya Zouzou",
-      image: "../assets/img/blog1.jpg",
-      theme: "Personal, Introduction",
-      desc: "A short note about launching this website and what I’ll share here.",
-      url: "post-bonjour.html"
-    },
-    {
-      title: "A peek into my current research",
-      date: "November 2025",
-      author: "Alya Zouzou",
-      image: "../assets/img/blog2.jpg",
-      theme: "Research, Computer Vision",
-      desc: "Exploring conformal prediction and robustness for multimodal models.",
-      url: "post-research.html"
+      image: "",
+      theme: "",
+      desc: "",
+      url: ""
     }
   ];
 
